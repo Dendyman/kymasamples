@@ -65,7 +65,8 @@ This sample demonstrates how to:
 
    ```shell
    kubectl create namespace dev
-   kubectl label namespaces dev istio-injection=enabled
+   kubectl create namespace prd --insecure-skip-tls-verify
+   kubectl label namespaces dev istio-injection=enabled --insecure-skip-tls-verify
    ```
 
 2. Within the project open the file `k8s/configmap.yaml` and adjust the `API_URL` by replacing `<cluster domain>` to the match the Kyma runtime cluster domain.
@@ -77,6 +78,12 @@ This sample demonstrates how to:
    kubectl -n dev apply -f ./k8s/deployment.yaml
    kubectl -n dev apply -f ./k8s/apirule.yaml
    ```
+   ```shell
+   kubectl -n prd apply -f ./k8s/configmap.yaml --insecure-skip-tls-verify
+   kubectl -n prd apply -f ./k8s/deployment.yaml --insecure-skip-tls-verify
+   kubectl -n prd apply -f ./k8s/apirule.yaml --insecure-skip-tls-verify
+   ```
+
 
 4. Use the APIRule to open the application:
 

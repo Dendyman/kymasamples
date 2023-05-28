@@ -60,11 +60,13 @@ This sample demonstrates how to:
    kubectl -n dev get po
    ```
 
+   
+
 The expected result shows that the Pod for the `mssql` Deployment is running:
 
 ```shell
 NAME                                     READY   STATUS    RESTARTS   AGE
-mssql-6df65c689d-nf9dk                   2/2     Running   0          93s
+mssql-79f8b85b5c-sz2bn                   2/2     Running   0          93s
 ```
 
 ## Run the Docker image locally

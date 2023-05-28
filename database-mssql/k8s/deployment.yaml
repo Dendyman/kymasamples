@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
         - name: mssql
-          image: jcawley5/mssql #change it to your image
+          image: afdendy/mssql #change it to your image
           imagePullPolicy: Always
           ports:
             - containerPort: 1433
